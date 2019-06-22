@@ -17,7 +17,9 @@ class CMStudent:
         self.cm_course_json = None
         self.username = None
         self.password = None
-        self.all_titles = []
+        self.course_list = []
+        self.dir = {}
+        self.table = []
 
     def signIn(self):
         tmp = self.username
@@ -32,7 +34,15 @@ class CMStudent:
         else:
             print("✔ Email and password have been verified.")
             self.getAllCourses()
-            self.all_titles = self.showAllCourses()
+            self.course_list = self.showAllCourses()
+            for course_name in self.course_list:
+                assessment_id_list = self.showAllTestsAndAssignments(course_name)
+                self.dir[course_name] = assessment_id_list
+            table = []
+            for item in self.dir:
+                table.append({'title': item, 'content': self.dir[item]})
+            self.table = table
+            print(table)
             return True
 
     def getAllCourses(self):

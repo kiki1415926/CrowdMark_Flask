@@ -1,8 +1,34 @@
-<!-- {% extends "layout.html" %} -->
+{% extends "courses.html" %}
 {% block content %}
-    {% for title in all_titles %}
-      <li>
-        {{ title }}
-      </li>
-    {% endfor %}
+<main class = "main-wrapper" role="main">
+        <a name="skip"></a>
+        <section class="main-content">
+            <div class="u-col--8">
+                <ul class="dropdown">
+                	<table>
+         			{% for t in table %}
+	                    <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	                      {{ t.title }}
+	                      <span class="badge badge-primary badge-pill">3</span>
+	                    </button>
+	                    <li class="dropdown-menu">
+	                    	{% for i in t.content %}
+	                        <a class="dropdown-item" href="#">
+	                        	<input type="checkbox">
+	                        	<label>
+	                        		{{ i }}
+	                        	</label>
+	                        </a>
+	                        {% endfor %}
+	                    </li>
+	                {% endfor %}
+                </ul>
+                <br>
+                <div id="download" style="text-align:center">
+                    <button class="button" style="text-align:center">Download</button>
+                </div>
+            </div>
+        </section>
+        <br>
+    </main>
 {% endblock content %}

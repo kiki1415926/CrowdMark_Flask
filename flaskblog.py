@@ -19,7 +19,7 @@ assignments = [
 ]
 
 student = CMStudent()
-all_titles = []
+table = []
 
 @app.route("/about")
 def about():
@@ -33,7 +33,6 @@ def login():
         student.password = form.password.data
         bol = student.signIn()
         if bol:
-            all_titles = student.all_titles
             flash('You have been logged in!', 'success')
             return redirect(url_for('home'))
         else:
@@ -43,8 +42,7 @@ def login():
 @app.route("/")
 @app.route("/home")
 def home():
-    print(student.all_titles)
-    return render_template('home.html', all_titles=student.all_titles)
+    return render_template('home.html', table=student.table)
 
 if __name__ == '__main__':
     app.run(debug=True)
