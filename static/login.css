@@ -29,13 +29,16 @@ body {
     padding: 5%;
     box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
 }
+
 .login-form-1 h3{
     text-align: center;
     color: #333;
 }
+
 .login-container form{
     padding: 3%;
 }
+
 .btnSubmit
 {
     width: 50%;
@@ -44,6 +47,7 @@ body {
     border: none;
     cursor: pointer;
 }
+
 .login-form-1 .btnSubmit{
     font-weight: 600;
     color: #fff;
@@ -61,6 +65,7 @@ body {
     top: 50%;
     transform: translate(-50%,-50%);
 }
+
 .login-form-1 .login-image {
     background: transparent url(https://crowdmark-com.s3.amazonaws.com/website/images/logo.svg) no-repeat center center/contain;
     background-image: url(https://crowdmark-com.s3.amazonaws.com/website/images/logo.svg);
