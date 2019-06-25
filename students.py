@@ -40,9 +40,8 @@ class CMStudent:
                 self.dir[course_name] = assessment_id_list
             table = []
             for item in self.dir:
-                table.append({'title': item, 'content': self.dir[item]})
+                table.append({'title': item, 'content': self.dir[item], 'length': len(self.dir[item])})
             self.table = table
-            print(table)
             return True
 
     def getAllCourses(self):
@@ -61,7 +60,7 @@ class CMStudent:
         i = 0
         while i < len(self.cm_course_json['data']):
             course_list.append(self.cm_course_json['data'][i]['id'])
-            print("[{}] {}".format(i, self.cm_course_json['data'][i]['id']))
+            # print("[{}] {}".format(i, self.cm_course_json['data'][i]['id']))
             i += 1
         print(course_list)
         return course_list
@@ -91,9 +90,9 @@ class CMStudent:
         i = 0
         while i < len(r_dict['data']):
             assessment_id_list.append(r_dict['data'][i]['id'])
-            print("[{}] {}".format(i, r_dict['data'][i]['relationships']['exam-master']['data']['id']))
+            # print("[{}] {}".format(i, r_dict['data'][i]['relationships']['exam-master']['data']['id']))
             i += 1
-        print("[{}] all".format(i))
+        # print("[{}] all".format(i))
         print()
 
         return assessment_id_list
@@ -280,3 +279,11 @@ class CMStudent:
                 cur_page += 1
 
         savePDF(cma, im_list, course_dir)
+        
+    def savePDF(cma, im_list, course_dir):
+        print()
+        if not im_list:
+            return
+        out_pdf_filename = os.path.join(course_dir, cma.assessment_name)
+        im_list[0].save(out_pdf_filename + ".pdf", "PDF", resolution=100.0, save_all=True, append_images=im_list[1:])
+

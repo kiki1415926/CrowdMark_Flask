@@ -12,3 +12,4 @@ def getCourseDir(base_dir, course_name):
     if not os.path.exists(course_dir):
         os.mkdir(course_dir)
     return course_dir
+    

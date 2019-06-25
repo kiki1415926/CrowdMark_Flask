@@ -4,23 +4,19 @@
         <a name="skip"></a>
         <section class="main-content">
             <div class="u-col--8">
-                <ul class="dropdown">
-                	<table>
+            	<ul class="student-dashboard__course-list">
+            		<table>
          			{% for t in table %}
-	                    <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-	                      {{ t.title }}
-	                      <span class="badge badge-primary badge-pill">3</span>
-	                    </button>
-	                    <li class="dropdown-menu">
-	                    	{% for i in t.content %}
-	                        <a class="dropdown-item" href="#">
-	                        	<input type="checkbox">
-	                        	<label>
-	                        		{{ i }}
-	                        	</label>
-	                        </a>
-	                        {% endfor %}
-	                    </li>
+	                  <li>
+	                    <a href="{{ url_for('single_course', course_name=t.title) }}" class="list-block course-list__course u-push-bottom--2 u-clearfix ember-view">
+	                    	<h2 class="list-block__title course__name u-left">
+	                    		{{ t.title }}
+	                    	</h2>
+	                    	<div class="course__assessments u-right">
+	                    		{{ t.length }} assessments
+	                      	</div>
+	                    </a>
+	                  </li>
 	                {% endfor %}
                 </ul>
                 <br>

@@ -1,45 +1,5 @@
-.dropdown-content {
-    display: none;
-    background-color: #f9f9f9;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-}
-
-.dropdown-content a {
-    float: none;
-    color: black;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-}
-
-
-.dropdown-menu {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    z-index: 1000;
-    display: none;
-    float: left;
-    min-width: 700px;
-    padding: .5rem 0;
-    margin: 0rem 0 0;
-    font-size: 1rem;
-    color: #212529;
-    text-align: left;
-    list-style: none;
-    background-color: #fff;
-    background-clip: padding-box;
-    border: 1px solid rgba(0,0,0,.15);
-    border-radius: .25rem;
-}
-
-.dropdown-content a:hover {
-    background-color: #ddd;
-}
-
-.dropdown:hover .dropdown-content {
-    display: block;
+*, .subscriptions .actions .cancel, :after, :before {
+    text-align: -webkit-center;
 }
 
 .list-group {
@@ -67,51 +27,6 @@ li a:hover {
     color: white;
 }
 
-.dropdown-toggle {
-    background-color: #40a8c3;
-    border: 0;
-    border-radius: 0;
-    padding: 20px 24px;
-    transition: background-color 150ms;
-    width: 700px;
-}
-
-.dropdown .dropdown-toggle {
-    padding: 22px 24px 22px 36px;
-    width: 700px;
-}
-
-input[type="checkbox" i] {
-    -webkit-appearance: checkbox;
-    box-sizing: border-box;
-}
-
-input[type="checkbox" i] {
-    background-color: initial;
-    cursor: default;
-    margin: 3px 0.5ex;
-    padding: initial;
-    border: initial;
-}
-
-input {
-    color: initial;
-    letter-spacing: normal;
-    word-spacing: normal;
-    text-transform: none;
-    text-indent: 0px;
-    text-shadow: none;
-    display: inline-block;
-    text-align: start;
-    margin: 0em;
-    font: 400 11px system-ui;
-}
-
-
-.dropdown {
-    margin: auto;
-}
-
 .main-header h1 {
     line-height: 41px;
     margin: 0;
@@ -131,7 +46,6 @@ h1 {
 }
 
 .main-wrapper {
-    padding: 0px 10px 100px 100px;
     margin: 0 auto;
     min-width: 320px;
     max-width: 1500px;
@@ -143,12 +57,6 @@ a {
     color: #40a8c3;
     text-decoration: none;
     transition: color 150ms;
-}
-
-*, .subscriptions .actions .cancel, :after, :before {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -ms-box-sizing: border-box;
 }
 
 .section {
@@ -178,15 +86,6 @@ a {
 }
 .delete-link-icon, a {
     background-color: transparent;
-}
-*, :after, :before {
-    -o-box-sizing: border-box;
-    box-sizing: border-box;
-}
-*, .subscriptions .actions .cancel, :after, :before {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -ms-box-sizing: border-box;
 }
 
 .button {
