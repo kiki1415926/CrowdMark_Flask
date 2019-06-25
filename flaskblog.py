@@ -62,6 +62,7 @@ def single_course(course_name):
         assessment_id_list = student.showAllTestsAndAssignments(course)
         for assessment_id in assessment_id_list:
             student.downloadAssessment(assessment_id, course_dir)
+    return render_template('single_course.html', table=student.table, username=student.username)
     
 if __name__ == '__main__':
     app.run(debug=True)
