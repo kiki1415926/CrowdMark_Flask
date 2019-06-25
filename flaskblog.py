@@ -48,9 +48,9 @@ def home():
 @app.route("/download/<string:course_name>")
 def single_course(course_name):
     student.signIn()
-    print(student.course_list)
     lst = student.course_list
     username = student.username
+    table = student.table
     i = 0
     for item in lst:
         if item == course_name:
@@ -59,11 +59,21 @@ def single_course(course_name):
     # 8
     course_list = [student.cm_course_json['data'][i]['id']]
     for course in course_list:
-        course_dir = getCourseDir("download", username, course)
+        course_dir = getCourseDir("static/download", username, course)
         assessment_id_list = student.showAllTestsAndAssignments(course)
+        lst = []
         for assessment_id in assessment_id_list:
-            student.downloadAssessment(assessment_id, course_dir)
-    return render_template('single_course.html', table=student.table, username=student.username)
-    
+            cma = student.downloadAssessment(assessment_id, course_dir)
+            lst.append(cma.getName())
+        student.dir[course] = lst
+        table = []
+        for item in student.dir:
+            table.append({'title': item, 'content': student.dir[item], 'length': len(student.dir[item])})
+        student.table = table
+    return render_template('single_course.html', table=student.table, course_name=course_name, username=student.username)
+
+
+
+
 if __name__ == '__main__':
     app.run(debug=True)

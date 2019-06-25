@@ -20,6 +20,9 @@ class CMAssessment:
     
     def setCourseName(self, course_name):
         self.course_name = course_name
+
+    def getName(self):
+        return self.assessment_name
     
     def setAssessmentIdV2(self, assessment_id_v2):
         self.assessment_id_v2 = assessment_id_v2

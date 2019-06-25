@@ -279,3 +279,6 @@ class CMStudent:
                 cur_page += 1
 
         savePDF(cma, im_list, course_dir)
+        return cma
+
+    

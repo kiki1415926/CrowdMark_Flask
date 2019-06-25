@@ -5,13 +5,25 @@
     <meta charset="UTF-8">
     <title>:single course</title>
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
 	<p>Hello</p>
 	<p>{{ username }}</p>
-    <!-- {% block content %}{% endblock %} -->
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <p>Here are your assignments which you can see and download!</p>
+    <p>{{ course_name }}</p>
+    <table>
+    	{% for t in table %}
+            {% if t.title == course_name %}
+                {% for i in t.content %}
+                	{{ i }}
+                	<br>
+                    <embed src="/static/download/{{ username }}/{{ course_name }}/{{ i }}.pdf" width="560" height="315" />
+                    <br>
+                {% endfor %}
+            {% endif %}
+        {% endfor %}
+
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </body>
