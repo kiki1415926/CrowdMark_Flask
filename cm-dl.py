@@ -9,6 +9,7 @@ if __name__ == "__main__":
     student.signIn()
     base_dir = getBaseDir()
     student.getAllCourses()
+    username = student.username
     while 1:
         course_list = student.showAllCourses()
         course_ipt = student.getCourseNameFromStdin()

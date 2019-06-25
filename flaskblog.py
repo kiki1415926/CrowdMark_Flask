@@ -50,6 +50,7 @@ def single_course(course_name):
     student.signIn()
     print(student.course_list)
     lst = student.course_list
+    username = student.username
     i = 0
     for item in lst:
         if item == course_name:
@@ -58,7 +59,7 @@ def single_course(course_name):
     # 8
     course_list = [student.cm_course_json['data'][i]['id']]
     for course in course_list:
-        course_dir = getCourseDir("download", course)
+        course_dir = getCourseDir("download", username, course)
         assessment_id_list = student.showAllTestsAndAssignments(course)
         for assessment_id in assessment_id_list:
             student.downloadAssessment(assessment_id, course_dir)
