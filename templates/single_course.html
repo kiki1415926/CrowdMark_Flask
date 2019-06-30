@@ -6,17 +6,18 @@
     <title>:single course</title>
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='single_course.css') }}"/>
 </head>
 <body>
-	<p>Hello</p>
-	<p>{{ username }}</p>
-    <p>Here are your assignments which you can see and download!</p>
+	<h1>Hello</h1>
+	<h1>{{ username }}</h1>
+    <h2>Here are your assignments which you can see and download!</h2>
     <p>{{ course_name }}</p>
     <table>
     	{% for t in table %}
             {% if t.title == course_name %}
                 {% for i in t.content %}
-                	{{ i }}
+                	<p>{{ i }}</p>
                 	<br>
                     <embed src="/static/download/{{ username }}/{{ course_name }}/{{ i }}.pdf" width="560" height="315" />
                     <br>

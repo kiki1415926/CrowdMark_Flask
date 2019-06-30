@@ -1,0 +1,20 @@
+.h1, h1 {
+    text-align: -webkit-center;
+    color: black;
+}
+
+.h2, h2 {
+    text-align: -webkit-center;
+}
+
+p {
+    text-align: center;
+    font-size: xx-large;
+    color: deeppink;
+}
+
+body {
+    color: slateblue;
+    text-align: -webkit-center;
+    background-color: seashell;
+}
